@@ -49,9 +49,15 @@ const App = () => {
       </ProtectedRoute>} />
     <Route path="login" element={<LoginPage />} />
     <Route path="signup" element={<SignUpPage />} />
-    <Route path="profile" element={<UserProfilePage />} />
+    <Route path="profile" element={
+      <ProtectedRoute>
+      <UserProfilePage />
+      </ProtectedRoute>} />
     <Route path="*" element={<NotFoundPage />} />
-    <Route path="payment-status" element={<PaymentStatusPage setNumberCartItems={setNumberCartItems} />} />
+    <Route path="payment-status" element={
+      <ProtectedRoute>
+      <PaymentStatusPage setNumberCartItems={setNumberCartItems} />
+      </ProtectedRoute>} />
 
     </Route>
 

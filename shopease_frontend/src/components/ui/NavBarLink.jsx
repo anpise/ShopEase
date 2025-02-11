@@ -8,6 +8,7 @@ const NavBarLink = () => {
 
   function logout(){
     localStorage.removeItem("access")
+    localStorage.removeItem("cart_code")
     setIsAuthenticated(false)
 
   }

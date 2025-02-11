@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from datetime import timedelta
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -145,3 +149,15 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60)
 }
+
+# FLUTTERWAVE_SECRET_KEY = "FLWSECK_TEST-825d260605a1fb0170d7af0cc15520f5-X"
+
+
+
+# settings.py
+
+PAYPAL_CLIENT_ID = ''
+PAYPAL_CLIENT_SECRET = ''
+PAYPAL_MODE = 'sandbox'  # or 'live' when you are ready for production
+
+REACT_BASE_URL = os.getenv("REACT_BASE_URL", "http://localhost:5173")
